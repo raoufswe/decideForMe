@@ -30,7 +30,7 @@ class App extends Component {
     })
   }
   
-  // the decision logic button
+  // the decision logic button -- function
    decide = () => {
     let randomNum = Math.floor(Math.random() *  this.state.options.length);
     let option =  this.state.options[randomNum];
