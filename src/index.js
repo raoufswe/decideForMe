@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import "./css/argon-dashboard-react.css"
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

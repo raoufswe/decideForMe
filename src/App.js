@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import Button from '@material-ui/core/Button';
-
+import './css/App.css';
+import Model from "./Model"
+import { Button, Input } from "reactstrap";
 class App extends Component {
   
   state = {
-    appTitle: "Decide for me",
-    subtitle: "No more wasting of time to decide, let computers do it for you!",
+    appTitle: "Decide for me 😕",
+    subtitle: "No more wasting of time to decide, let computers do it for you 💻",
     options : []
   }
 
@@ -48,23 +48,30 @@ class App extends Component {
       <div className="App">
         <h2>{ this.state.appTitle}</h2>
         <p>{ this.state.subtitle}</p>
-        <p>{ this.state.options.length > 0 ? "here are your options" : "No options"}</p>
+        <p><strong>{ this.state.options.length > 0 ? "here are your options" : "No options"}</strong></p>
         <ol>
         {options}
         </ol>
-        <Button  onClick={this.decide} variant="contained" color="primary">Decide for me</Button>
+        <Model 
+        options={this.state.options}
+        />
+       
         <span>         </span>
         
-        <Button onClick={this.removeAll} variant="contained" color="secondary">Clear</Button>
+        <Button onClick={this.removeAll} color="danger" type="button" >Clear</Button>
         <br />
         <br />
-        <form onSubmit={this.onFormSubmit} >
-          <input type="text" name="option" placeholder="Enter an option"/>
+        <form onSubmit={this.onFormSubmit}  >
+        <div className="container">
+          <Input type="text" name="option" placeholder="Enter an option"/>
+          </div>
           <br />
-          <br />
-          <button className="button">Add option</button>
+
+          <Button type="submit" color="primary">Add option</Button>
         </form>
+     
       </div>
+      
     );
   }
 }

@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+
+ margin-top: 8%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+    
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+   
+    margin-top: 20%;
+    padding: 10%;
+  }
+}
